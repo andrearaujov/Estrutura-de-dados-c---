@@ -15,10 +15,7 @@ Nota: o formato de saída das ações deve ser: (Identificador, NomeAcao, TempoE
 Entradas:
 
 Comandos detalhados no exercício
-Saídas:
 
-Impressões detalhadas no exercício
-Exemplo de Entrada e Saída misturados:
  */
 
 #include <iostream>
