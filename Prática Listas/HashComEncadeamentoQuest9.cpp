@@ -58,6 +58,10 @@ f
 3: 
 4: [um/1]
 5: [oito/8][dois/2]
+
+Utilizando como base o código que você desenvolveu na atividade "Hash com encadeamento - Inventário de itens de jogo", 
+altere as inserções para que a inserção na lista seja ordenada
+
  */
 
 #include <iostream>
@@ -116,7 +120,19 @@ public:
     void insere(const string &c, const char &t, const int &v)
     {
         noh* novo = new noh(c, t, v, primeiro);
-        primeiro = novo;
+
+        if(primeiro == nullptr or c < primeiro->chave){
+            novo->proximo = primeiro;
+            primeiro = novo;
+        }                     
+        else{
+            noh* atual = primeiro;
+            while(atual->proximo != nullptr and c > atual->proximo->chave){
+                atual = atual->proximo;
+            }
+            novo->proximo = atual->proximo;
+            atual->proximo = novo;
+        }
         numElementos++;
     }
     // Remove o noh com dada chave da lista.
